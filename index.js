@@ -1,150 +1,150 @@
-// // Functions
+// Functions
 
-// // Normal function
-// function getRectangleArea(width, height) {
-//   return width * height;
-// }
+// Normal function
+function getRectangleArea(width, height) {
+  return width * height;
+}
 
-// console.log(getRectangleArea(5, 10));
+console.log(getRectangleArea(5, 10));
 
-// // Arrow function
-// const getRectangleArea1 = (width, height) => {
-//   return width * height;
-// };
+// Arrow function
+const getRectangleArea1 = (width, height) => {
+  return width * height;
+};
 
-// console.log(getRectangleArea1(5, 10));
+console.log(getRectangleArea1(5, 10));
 
-// // shorter for 1 line return (returns automatically to the variable.)
-// const getRectangleArea2 = (width, height) => width * height;
+// shorter for 1 line return (returns automatically to the variable.)
+const getRectangleArea2 = (width, height) => width * height;
 
-// console.log(getRectangleArea2(5, 10));
+console.log(getRectangleArea2(5, 10));
 
-// const sayHello = () => console.log(`Hello!`);
-// sayHello();
+const sayHello = () => console.log(`Hello!`);
+sayHello();
 
-// // // callback
-// // const numbers = [1, 2, 3, 4, 5];
-// // const double = numbers.map(function (number) {
-// //   return number * 2;
-// // });
-
-// // console.log(double);
-
-// // callback in arrow function
+// // callback
 // const numbers = [1, 2, 3, 4, 5];
-// const double = numbers.map((number) => number * 2);
+// const double = numbers.map(function (number) {
+//   return number * 2;
+// });
 
 // console.log(double);
 
-// // Important note: A arrow function can not be called before the initialization.
-// // A normal function can be called before.
+// callback in arrow function
+const numbers = [1, 2, 3, 4, 5];
+const double = numbers.map((number) => number * 2);
 
-// const person = {
-//   name: "Maikel",
-//   sayHelloRegular: function () {
-//     console.log("Regular: ", this.name);
-//   },
-//   sayHelloArrow: () => console.log("Arrow: ", this.name), // This return the browser window object and not the person object, so will return undifined in node and window object in the browser.
-// };
+console.log(double);
 
-// person.sayHelloRegular();
-// person.sayHelloArrow();
+// Important note: A arrow function can not be called before the initialization.
+// A normal function can be called before.
 
-// // Template Literals
-// const name = "Maikel";
-// const greeting = `Hello, my name is ${name}`;
+const person = {
+  name: "Maikel",
+  sayHelloRegular: function () {
+    console.log("Regular: ", this.name);
+  },
+  sayHelloArrow: () => console.log("Arrow: ", this.name), // This return the browser window object and not the person object, so will return undifined in node and window object in the browser.
+};
 
-// console.log(greeting);
+person.sayHelloRegular();
+person.sayHelloArrow();
 
-// const formatDate = (timestamp) => {
-//   const date = new Date(timestamp);
-//   return `${date.toLocaleDateString()} at ${date.toLocaleTimeString()}`;
-// };
+// Template Literals
+const name = "Maikel";
+const greeting = `Hello, my name is ${name}`;
 
-// const note = {
-//   title: "Discuss project",
-//   timestamp: Date.now(),
-// };
+console.log(greeting);
 
-// console.log(`Last Edited: ${formatDate(note.timestamp)}`);
+const formatDate = (timestamp) => {
+  const date = new Date(timestamp);
+  return `${date.toLocaleDateString()} at ${date.toLocaleTimeString()}`;
+};
 
-// // Ternary & Short Circuit Rendering
+const note = {
+  title: "Discuss project",
+  timestamp: Date.now(),
+};
 
-// // Old fashion
-// const number = 5;
-// let message;
+console.log(`Last Edited: ${formatDate(note.timestamp)}`);
 
-// if (number % 2 === 0) {
-//   message = `Even Number`;
-// } else {
-//   message = `Odd Number`;
-// }
+// Ternary & Short Circuit Rendering
 
-// // Ternary
-// const number2 = 5;
-// const message2 = number2 % 2 === 0 ? "Even Number" : "Odd Number";
+// Old fashion
+const number = 5;
+let message;
 
-// console.log(`The number ${number2} is a ${message2}`);
+if (number % 2 === 0) {
+  message = `Even Number`;
+} else {
+  message = `Odd Number`;
+}
 
-// const note2 = {
-//   title: "Meeting notes",
-//   content: "Discuss project roadmap",
-//   timestamp: Date.now(),
-//   isPinned: true,
-// };
+// Ternary
+const number2 = 5;
+const message2 = number2 % 2 === 0 ? "Even Number" : "Odd Number";
 
-// const noteText = `
-//   Title: ${note2.title}
-//   Status: ${note2.isPinned ? "Pinned" : "Regular Note"}
-//   Last Edited: ${new Date(note2.timestamp).toLocaleString()}
-// `;
+console.log(`The number ${number2} is a ${message2}`);
 
-// const isLoggedIn = true;
+const note2 = {
+  title: "Meeting notes",
+  content: "Discuss project roadmap",
+  timestamp: Date.now(),
+  isPinned: true,
+};
 
-// function showWelcome() {
-//   return isLoggedIn ? "Welcome, User" : "";
-// }
+const noteText = `
+  Title: ${note2.title}
+  Status: ${note2.isPinned ? "Pinned" : "Regular Note"}
+  Last Edited: ${new Date(note2.timestamp).toLocaleString()}
+`;
 
-// console.log(showWelcome());
+const isLoggedIn = true;
 
-// const notes = [
-//   { title: "Meeting Notes", content: "Discuss project roadmap" },
-//   { title: "Grocery List", content: "Buy milk, eggs, bread" },
-//   { title: "Meeting Notes", content: "Push day: Bench, Shoulder press" },
-//   { title: "Meeting Notes", content: "Pasta, salad, Tacos" },
-// ];
+function showWelcome() {
+  return isLoggedIn ? "Welcome, User" : "";
+}
 
-// const [firstNote, secondNote, ...otherNotes] = notes; // ...otherNotes is the rest operator.
+console.log(showWelcome());
 
-// console.log(firstNote);
-// console.log(secondNote.title);
-// console.log(otherNotes);
+const notes = [
+  { title: "Meeting Notes", content: "Discuss project roadmap" },
+  { title: "Grocery List", content: "Buy milk, eggs, bread" },
+  { title: "Meeting Notes", content: "Push day: Bench, Shoulder press" },
+  { title: "Meeting Notes", content: "Pasta, salad, Tacos" },
+];
 
-// const note3 = {
-//   titles: "Meeting Notes",
-//   content: "Discuss project roadmap",
-//   isPinned: true,
-// };
+const [firstNote, secondNote, ...otherNotes] = notes; // ...otherNotes is the rest operator.
 
-// const { titles } = note3;
+console.log(firstNote);
+console.log(secondNote.title);
+console.log(otherNotes);
 
-// console.log(titles);
+const note3 = {
+  titles: "Meeting Notes",
+  content: "Discuss project roadmap",
+  isPinned: true,
+};
 
-// const user = {
-//   name: "Maikel",
-//   address: { city: "Boston", state: "MA" },
-//   hobbies: ["Sports", "Movies", "Music"],
-// };
+const { titles } = note3;
 
-// const {
-//   name,
-//   address: { city, state },
-//   hobbies: [firstHobby, ...otherHobbies],
-// } = user;
-// console.log(city, state);
-// console.log(firstHobby, otherHobbies);
+console.log(titles);
 
-// Array Methods
+const user = {
+  name: "Maikel",
+  address: { city: "Boston", state: "MA" },
+  hobbies: ["Sports", "Movies", "Music"],
+};
+
+const {
+  name,
+  address: { city, state },
+  hobbies: [firstHobby, ...otherHobbies],
+} = user;
+console.log(city, state);
+console.log(firstHobby, otherHobbies);
+
+Array Methods
 const notes = [
   {
     title: "Meeting Notes",
@@ -164,3 +164,59 @@ const noteTitles = notes.map(
   (note, index) => `Index: ${index}. title: ${note.title}`
 );
 console.log(noteTitles);
+
+const user = {
+  name: "Maikel",
+};
+
+console.log(user.address?.city ?? "Unknown");
+
+let value = null;
+let result = value ?? "Default Value";
+
+console.log(result);
+
+const myPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Promise Resolved");
+  }, 2000);
+});
+
+myPromise.then((data) => {
+  console.log(data);
+});
+
+const myPromise2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    reject("Promise Rejected");
+  }, 2000);
+});
+
+myPromise2
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
+// OLD
+fetch("https://jsonplaceholder.typicode.com/todos/1")
+  .then((response) => response.json())
+  .then((json) => console.log(json))
+  .catch((error) => console.log(error));
+
+// NEW
+const fetchData = async () => {
+  try {
+    const response = await fetch(
+      "https://jsonplaceholder.typicode.com/todos/1"
+    );
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+fetchData();
